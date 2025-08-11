@@ -30,6 +30,8 @@ cmd - f : yabai -m window --toggle float
 cmd - t : open -a Telegram
 cmd - b : open -a "Google Chrome"
 cmd - s : open -a iTerm
+cmd - u : open -a "Yandex Music"
+cmd - p : open -a "System Settings"
 
 # Switch to Space N
 cmd - 1 : yabai -m space --focus 1
@@ -43,15 +45,26 @@ cmd - 8 : yabai -m space --focus 8
 cmd - 9 : yabai -m space --focus 9
 cmd - 0 : yabai -m space --focus 10
 
-# Move focused window to Space N (like dwm’s Mod+Shift+N)
-shift + cmd - 1 : yabai -m window --space 1; yabai -m space --focus 1
-shift + cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2
-shift + cmd - 3 : yabai -m window --space 3; yabai -m space --focus 3
-shift + cmd - 4 : yabai -m window --space 4; yabai -m space --focus 4
-shift + cmd - 5 : yabai -m window --space 5; yabai -m space --focus 5
-shift + cmd - 6 : yabai -m window --space 6; yabai -m space --focus 6
-shift + cmd - 7 : yabai -m window --space 7; yabai -m space --focus 7
-shift + cmd - 8 : yabai -m window --space 8; yabai -m space --focus 8
-shift + cmd - 9 : yabai -m window --space 9; yabai -m space --focus 9
-shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+# # Move focused window to Space N (like dwm’s Mod+Shift+N)
+# shift + cmd - 1 : yabai -m window --space 1; yabai -m space --focus 1
+# shift + cmd - 2 : yabai -m window --space 2; yabai -m space --focus 2
+# shift + cmd - 3 : yabai -m window --space 3; yabai -m space --focus 3
+# shift + cmd - 4 : yabai -m window --space 4; yabai -m space --focus 4
+# shift + cmd - 5 : yabai -m window --space 5; yabai -m space --focus 5
+# shift + cmd - 6 : yabai -m window --space 6; yabai -m space --focus 6
+# shift + cmd - 7 : yabai -m window --space 7; yabai -m space --focus 7
+# shift + cmd - 8 : yabai -m window --space 8; yabai -m space --focus 8
+# shift + cmd - 9 : yabai -m window --space 9; yabai -m space --focus 9
+# shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
+# 1..9, 0 -> space 10
+shift + cmd - 1 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 1; yabai -m space --focus 1; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 2 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 2; yabai -m space --focus 2; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 3 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 3; yabai -m space --focus 3; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 4 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 4; yabai -m space --focus 4; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 5 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 5; yabai -m space --focus 5; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 6 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 6; yabai -m space --focus 6; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 7 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 7; yabai -m space --focus 7; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 8 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 8; yabai -m space --focus 8; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 9 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 9; yabai -m space --focus 9; sleep 0.05; yabai -m window --focus "$id"
+shift + cmd - 0 : id="$(yabai -m query --windows --window | jq -r '.id')"; yabai -m window --space 10; yabai -m space --focus 10; sleep 0.05; yabai -m window --focus "$id"
