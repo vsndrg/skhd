@@ -1,6 +1,10 @@
 # Changing window focus
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
+# cmd - j : yabai -m window --focus south
+# cmd - k : yabai -m window --focus north
+# cmd - h : yabai -m window --focus west
+# cmd - l : yabai -m window --focus east
+cmd - j : ~/.config/skhd/focus_j.sh
+cmd - k : ~/.config/skhd/focus_k.sh
 cmd - h : yabai -m window --focus west
 cmd - l : yabai -m window --focus east
 
@@ -11,10 +15,15 @@ cmd + alt - h : yabai -m window --swap west
 cmd + alt - l : yabai -m window --swap east
 
 # Moving windows
-cmd + ctrl - h : yabai -m window --move left:-20:0
-cmd + ctrl - l : yabai -m window --move right:20:0
-cmd + ctrl - k : yabai -m window --move up:0:20
-cmd + ctrl - j : yabai -m window --move down:0:-20
+# cmd + ctrl - h : yabai -m window --move left:-20:0
+# cmd + ctrl - l : yabai -m window --move right:20:0
+# cmd + ctrl - k : yabai -m window --move up:0:20
+# cmd + ctrl - j : yabai -m window --move down:0:-20
+
+cmd + ctrl - h : yabai -m window --warp west
+cmd + ctrl - l : yabai -m window --warp east
+cmd + ctrl - k : yabai -m window --warp north
+cmd + ctrl - j : yabai -m window --warp south
 
 # Resizing windows
 cmd + shift - h : ~/.config/skhd/resize.sh -h
@@ -22,10 +31,28 @@ cmd + shift - l : ~/.config/skhd/resize.sh -l
 cmd + shift - k : ~/.config/skhd/resize.sh -k
 cmd + shift - j : ~/.config/skhd/resize.sh -j
 
+# Moving windows
+cmd + alt + ctrl - h : yabai -m window --move rel:-30:0
+cmd + alt + ctrl - l : yabai -m window --move rel:30:0
+cmd + alt + ctrl - k : yabai -m window --move rel:0:-30
+cmd + alt + ctrl - j : yabai -m window --move rel:0:30
+
+# Resizing windows
+cmd + alt + shift - h : yabai -m window --resize bottom_right:-30:0
+cmd + alt + shift - l : yabai -m window --resize bottom_right:30:0
+cmd + alt + shift - k : yabai -m window --resize bottom_right:0:-30
+cmd + alt + shift - j : yabai -m window --resize bottom_right:0:30  
+
+cmd + ctrl + shift - h : yabai -m window --resize top_left:-30:0
+cmd + ctrl + shift - l : yabai -m window --resize top_left:30:0
+cmd + ctrl + shift - k : yabai -m window --resize top_left:0:-30
+cmd + ctrl + shift - j : yabai -m window --resize top_left:0:30  
+
 # Fullscreen and Floating
 cmd - return : yabai -m window --toggle zoom-fullscreen
 cmd - g : yabai -m window --toggle windowed-fullscreen
 cmd - f : yabai -m window --toggle float
+cmd - d : yabai -m window --toggle split
 
 cmd - t : open -a Telegram
 cmd - b : open -a "Google Chrome"
