@@ -48,6 +48,9 @@ cmd + ctrl + shift - l : yabai -m window --resize top_left:30:0
 cmd + ctrl + shift - k : yabai -m window --resize top_left:0:-30
 cmd + ctrl + shift - j : yabai -m window --resize top_left:0:30  
 
+cmd + fn - j : yabai -m space --focus prev
+cmd + fn - k : yabai -m space --focus next
+
 # Fullscreen and Floating
 cmd - return : yabai -m window --toggle zoom-fullscreen
 cmd - g : yabai -m window --toggle windowed-fullscreen
@@ -55,8 +58,8 @@ cmd - f : yabai -m window --toggle float
 cmd - d : yabai -m window --toggle split
 
 cmd - t : open -a Telegram
-cmd - b : open -a "Google Chrome"
-cmd - s : open -a iTerm
+cmd - b : ~/.config/skhd/open_chrome.sh
+cmd - s : ~/.config/skhd/open_iterm.sh
 cmd - u : open -a "Yandex Music"
 cmd - p : open -a "System Settings"
 
